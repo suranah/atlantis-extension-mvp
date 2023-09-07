@@ -1,0 +1,10 @@
+{
+    "name": "Tabula Rasa 4",
+    "description": "Tabula Rasa is a new extension!",
+    "version": "1.0",
+    "manifest_version": 3,
+    "action": {
+      "default_popup": "tabula.html",
+      "default_icon": "hello_extensions.png"
+    }
+  }
