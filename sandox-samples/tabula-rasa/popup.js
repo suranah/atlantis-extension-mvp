@@ -1,6 +1,14 @@
 console.log('This is a popup!');
 console.log('It is Tabula Rasa!');
 
+
+chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+    var activeTab = tabs[0];
+    chrome.tabs.sendMessage(activeTab.id, {"message": "clicked_browser_action"}, function(response) {
+      console.log(response);  // Logs the video title
+    });
+  });
+
 // Function to get videos from a playlist
 function getPlaylistVideos() {
     //let videoElements = document.querySelectorAll('#contents .style-scope ytd-playlist-video-renderer');
@@ -31,3 +39,5 @@ console.log("Page Title:", document.title);
 
 // Sample usage
 console.log("Playlist Videos:", getPlaylistVideos());
+
+
